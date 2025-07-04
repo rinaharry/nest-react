@@ -1,10 +1,10 @@
 import Image from "next/image";
-import RedirectUrl from "../components/Shortener";
+import Shortener from "../components/Shortener";
 
 export default function Home() {
   return (
     <div>
-      <RedirectUrl />
+      <Shortener />
     </div>
   );
 }
