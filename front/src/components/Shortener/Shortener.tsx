@@ -10,7 +10,7 @@ const Shortener = () => {
   const [loading, setLoading] = useState(false);
   const { createShortUrl } = useCreateShortUrl();
 
-  const handleCreateShortener = async (e: any) => {
+  const handleCreateShortener = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setShortUrl("");
