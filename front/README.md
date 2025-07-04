@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 front
 
-## Getting Started
+> Frontend de l'application, développé avec [Next.js](https://nextjs.org/), React 19 et Tailwind CSS 4.
 
-First, run the development server:
+## 📖 Description
+
+Ce projet constitue l'interface utilisateur de l'application. Il est basé sur [Next.js](https://nextjs.org/) avec support TypeScript, Tailwind CSS pour le style, et utilise Turbopack pour un développement plus rapide.
+
+---
+
+## 🚀 Démarrage rapide
+
+### 🔧 Installation
+
+```bash
+# Cloner le projet
+git clone <url-du-repo>
+cd front
+
+# Installer les dépendances
+npm install
+```
+
+### ▶️ Lancer le projet
+
+#### En développement
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### En production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm run start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Scripts disponibles
 
-To learn more about Next.js, take a look at the following resources:
+| Script  | Description                                           |
+| ------- | ----------------------------------------------------- |
+| `dev`   | Lance l'application en mode développement (Turbopack) |
+| `build` | Compile l'application pour la production              |
+| `start` | Démarre l'application en mode production              |
+| `lint`  | Analyse statique avec ESLint                          |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧩 Dépendances principales
 
-## Deploy on Vercel
+- `react` ^19
+- `react-dom` ^19
+- `next` ^15
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🛠️ Outils de développement
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `TypeScript`
+- `Tailwind CSS` v4
+- `ESLint`
+- `@types` pour Node, React et ReactDOM
+
+---
+
+## 📄 Licence
+
+Ce projet est **privé** (`private: true`). Usage interne uniquement.
+
+---
+
+## 👤 Auteur
+
+_À compléter dans `package.json` → `"author"`._
+
+---
