@@ -181,3 +181,52 @@ Ce projet est **privé** (`private: true`). Usage interne uniquement.
 _À compléter dans `package.json` → `"author"`._
 
 ---
+
+# 🐳 Utilisation de Docker avec Docker Compose
+
+Ce projet utilise Docker Compose pour configurer et exécuter un environnement complet comprenant :
+
+- une application NestJS (backend)
+- une base de données PostgreSQL
+- une interface d'administration pgAdmin
+
+---
+
+## 🏗️ Structure des services
+
+### 1. `nestjs-app`
+
+- Application principale (NestJS)
+- Port exposé : `3000`
+- Dépend de : `postgres`
+- Montages :
+  - Volume local du code (`.:/app`)
+  - Dossier `node_modules` non synchronisé
+
+### 2. `postgres`
+
+- Image : `postgres:15`
+- Port exposé : `5432`
+- Variables d’environnement :
+  - `POSTGRES_USER=postgres`
+  - `POSTGRES_PASSWORD=123456test`
+  - `POSTGRES_DB=test`
+- Volume : `postgres-data`
+
+### 3. `pgadmin`
+
+- Interface de gestion PostgreSQL
+- Image : `dpage/pgadmin4:8`
+- Port exposé : `8080`
+- Accès : `http://localhost:8080`
+- Identifiants :
+  - Email : `admin@admin.com`
+  - Mot de passe : `admin`
+
+---
+
+## ▶️ Lancer l'environnement
+
+```bash
+docker compose up --build
+```
