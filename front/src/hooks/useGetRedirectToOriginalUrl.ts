@@ -1,9 +1,9 @@
 import { API_URL } from "@/constants";
 
 export const useGetRedirectToOriginalUrl = () => {
-  const getRedirectToOriginalUrl = async (shortUrl: string) => {
+  const getRedirectToOriginalUrl = async (code: string) => {
     try {
-      const response = await fetch(`${API_URL}redirect/${shortUrl}`);
+      const response = await fetch(`${API_URL}redirect/${code}`);
       if (!response.ok) {
         throw new Error("Réponse non valide");
       }
