@@ -62,16 +62,6 @@ export class UrlService {
     return url.originalUrl;
   }
 
-  async getUrlStats(shortCode: string): Promise<UrlResponseDto> {
-    const url = await this.urlRepository.findOne({ where: { shortCode } });
-
-    if (!url) {
-      throw new NotFoundException('Short URL not found');
-    }
-
-    return this.formatUrlResponse(url);
-  }
-
   private formatUrlResponse(url: Url): UrlResponseDto {
     const baseUrl = process.env.BASE_URL || 'http://localhost:3000';
 

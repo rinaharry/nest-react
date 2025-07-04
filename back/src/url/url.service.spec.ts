@@ -123,32 +123,4 @@ describe('UrlService', () => {
       );
     });
   });
-
-  describe('getUrlStats', () => {
-    it('should return URL statistics', async () => {
-      const url = {
-        id: 1,
-        originalUrl: 'https://example.com',
-        shortCode: 'abc123',
-        clickCount: 10,
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      };
-
-      mockRepository.findOne.mockResolvedValue(url);
-
-      const result = await service.getUrlStats('abc123');
-
-      expect(result.originalUrl).toBe(url.originalUrl);
-      expect(result.shortCode).toBe(url.shortCode);
-    });
-
-    it('should throw NotFoundException when short code not found', async () => {
-      mockRepository.findOne.mockResolvedValue(null);
-
-      await expect(service.getUrlStats('nonexistent')).rejects.toThrow(
-        NotFoundException,
-      );
-    });
-  });
 });

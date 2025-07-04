@@ -37,11 +37,4 @@ export class UrlController {
       });
     }
   }
-
-  @Get('api/stats/:shortCode')
-  async getUrlStats(
-    @Param('shortCode') shortCode: string,
-  ): Promise<UrlResponseDto> {
-    return this.urlService.getUrlStats(shortCode);
-  }
 }

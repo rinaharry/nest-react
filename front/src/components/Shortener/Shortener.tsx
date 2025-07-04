@@ -5,7 +5,7 @@ import { useCreateShortUrl } from "../../hooks/useCreateShortUrl";
 const Shortener = () => {
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
-  const [stats, setStats] = useState(null);
+
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const { createShortUrl } = useCreateShortUrl();
@@ -14,13 +14,12 @@ const Shortener = () => {
     e.preventDefault();
     setError("");
     setShortUrl("");
-    setStats(null);
+
     setLoading(true);
     try {
       const response = await createShortUrl(longUrl);
       const { shortUrl, shortCode } = response;
       setShortUrl(shortUrl);
-      setStats(response);
     } catch (err) {
     } finally {
       setLoading(false);
@@ -69,12 +68,7 @@ const Shortener = () => {
           </a>
         </div>
       )}
-      {stats && (
-        <div className="mt-4 p-4 bg-blue-100 text-blue-800 rounded-md">
-          <p>Statistics:</p>
-          <p>Original URL: {stats.originalUrl}</p>
-        </div>
-      )}
+
       {error && (
         <div className="mt-4 p-4 bg-red-100 text-red-800 rounded-md">
           {error}
